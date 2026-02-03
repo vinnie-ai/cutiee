@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  font-family: Poppins, sans-serif;
+}
+
+.card {
+  background: #fff5f5;
+  padding: 30px 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#heart {
+  width: 280px;
+  height: 240px;
+  position: relative;
+  margin: auto;
+}
+
+.heart-piece {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background: red;
+  transform: scale(0);
+  animation: pop 0.5s forwards;
+}
+
+.heart-piece::before,
+.heart-piece::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart-piece::before {
+  top: -9px;
+  left: 0;
+}
+
+.heart-piece::after {
+  left: 9px;
+  top: 0;
+}
+
+@keyframes pop {
+  to { transform: scale(1); }
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #e63946;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
